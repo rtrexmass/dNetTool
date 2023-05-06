@@ -1,2 +1,9 @@
-Install flask (pip install flask)
+Web Ping/Tracert/Whois Tool, tested with Alpine (Busybox)
+
+Install flask
 Execute app.py using python.
+Once the Flask application is running, you can access the Web Ping/Tracert/Whois Tool by navigating to "http://localhost:5000" 
+(or the ip it shows in your terminal) in your web browser.
+
+This tool is designed to be used as a troubleshooting tool in a remote server, to quickly validate domain/ip availability
+It has a Windows 95/98 theme just for looks.
