@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>dNetTool</title>
+    <link rel="icon" href="https://i.imgur.com/rUZ3rZS.png" type="image/png">
+    <style>
+        body {
+            background-color: #c3c3c3;
+            font-family: "ＭＳ Ｐゴシック" display:flex;
+        }
+
+        .box {
+            background-color: #008080;
+            border: 2px solid #000;
+            border-radius: 5px;
+            padding: 20px;
+            width: 450px;
+            margin: 0 auto;
+            margin-top: 10px;
+            box-shadow: 5px 5px 5px #888888;
+        }
+
+        .lbox {
+            background-color: #008080;
+            border: 2px solid #000;
+            border-radius: 5px;
+            padding: 20px;
+            width: 450px;
+            margin: 0 auto;
+            margin-top: 50px;
+            box-shadow: 5px 5px 5px #888888;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            font-size: 16px;
+            padding: 5px;
+            border-radius: 3px;
+            border: 1px solid #000;
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            font-size: 16px;
+            padding: 5px 10px;
+            border-radius: 3px;
+            border: 1px solid #000;
+            background-color: #c0c0c0;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        pre {
+            font-size: 14px;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #000;
+            border-radius: 3px;
+            overflow-x: auto;
+            box-shadow: 5px 5px 5px #888888;
+        }
+    </style>
+</head>
+<h1>dNetTool</h1>
+
+<body>
+    <div class="box">
+        <form method="POST">
+            <label for="domain">Enter Domain or IP:</label>
+            <input type="text" name="domain" id="domain"><br><br>
+            <input type="radio" id="ping" name="submit" value="Ping" checked <label for="ping">Ping</label><br>
+            <label for="count">Count:</label>
+            <input type="text" name="count" id="count" value="4"><br>
+            <label for="size">Size:</label>
+            <input type="text" name="size" id="size" value="32"><br>
+            <label for="ttl">TTL:</label>
+            <input type="text" name="ttl" id="ttl" value="128"><br><br>
+            <input type="radio" id="tracert" name="submit" value="Tracert" <label for="tracert">Tracert</label><br>
+            <input type="radio" id="whois" name="submit" value="Whois" label for="whois">Whois</label> <br>
+            <input type="submit" value="Run">
+
+        </form>
+        {% if output %}
+        <h2>Command Output:</h2>
+        <pre>{{ output }}</pre> {% endif %}
+    </div>
+    <div class="lbox">
+        <label for="domain">Please wait for your result, it may take a while.</label>
+    </div>
+</body>
+<footer style="text-align:center; background-color:#818181; padding:0px;">
+    <p style="font-size:14px; color:#555;"><a href="https://github.com/rtrexmass" target="_blank" rel="noopener">https://github.com/rtrexmass</a></p>
+</footer>
+
+</html>
